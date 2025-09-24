@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Finerlo — Lokalny Backup Microsoft 365 dla lokalnych firm</title>
+  <meta name="description" content="Lokalny, prywatny backup Microsoft 365 dla firm. Kopia zapasowa na Twoich dyskach, w Polsce. Wdrożenie nawet w 1 dzień. Suwerenność danych i szybkie odtwarzanie." />
+  <meta name="theme-color" content="#6E00FF" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://finerlo.com/" />
+  <meta property="og:title" content="Finerlo — Lokalny Backup Microsoft 365 dla lokalnych firm" />
+  <meta property="og:description" content="Kopia zapasowa Microsoft 365 na dyskach, w Polsce. Wdrożenie w 1 dzień. Pełna kontrola i szybkie przywracanie danych." />
+  <meta property="og:image" content="https://finerlo.com/og-image.png" />
+
+
+  <style>
+
+/* Domyślnie ukryj menu mobilne na desktopie */
+.mobile-panel,
+.menu-toggle {
+  display: none;
+}
+
+/* Pokaż tylko na ekranach poniżej 768px */
+@media (max-width: 768px) {
+  .mobile-panel,
+  .menu-toggle {
+    display: block;
+  }
+
+  .mobile-panel {
+    background: #f0f0f0;
+    padding: 1rem;
+  }
+
+  .mobile-panel a {
+    display: block;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    color: #333;
+  }
+}
+
+    /* ===========
+       PALETA / BRAND
+       =========== */
+    :root{
+      /* tło / karty */
+      --bg: #0B0A0F;
+      --surface: #11101A;
+      --surface-2: #151322;
+      --text: #EEF0FF;
+      --muted: #B9B6CA;
+      --border: rgba(255,255,255,0.08);
+
+      /* fiolet: Twoje akcenty */
+      --brand:   #6E00FF;  /* główny */
+      --brand-2: #8A2EFF;  /* jaśniejszy */
+      --brand-3: #4B00BF;  /* ciemniejszy */
+
+      /* sygnalizacja */
+      --good:   #7dd3fc;
+      --better: #a78bfa;
+      --best:   #34d399;
+
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    /* ===========
+       RESET / BAZA
+       =========== */
+    *{box-sizing:border-box}
+    html,body{
+      margin:0; padding:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      line-height:1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+    /* Tło strony (subtelny fioletowy glow) */
+    .page-bg{
+      background:
+        radial-gradient(1200px 600px at 20% -20%, rgba(110,0,255,0.35), transparent 60%),
+        radial-gradient(1000px 500px at 80% -10%, rgba(138,46,255,0.25), transparent 65%);
+      min-height:100dvh;
+    }
+
+    /* ===========
+       NAGŁÓWEK (struktura jak valcreon)
+       =========== */
+    .site-header{
+      position: sticky; top:0; z-index:50;
+      border-bottom: 1px solid var(--border);
+      /* „CopilotMenu” – wielowarstwowy gradient z lekką poświatą po bokach */
+      background:
+        radial-gradient(800px 160px at 10% -40%, rgba(110,0,255,0.55), transparent 60%),
+        radial-gradient(800px 160px at 90% -40%, rgba(0,204,255,0.35), transparent 60%),
+        linear-gradient(180deg, rgba(12,10,16,0.78), rgba(12,10,16,0.62));
+      backdrop-filter: saturate(160%) blur(10px);
+    }
+    .header-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      height:72px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:800;
+    }
+    .logo-mark{
+      width:28px; height:28px; border-radius:8px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      display:grid; place-items:center; box-shadow: var(--shadow);
+    }
+    .logo-mark svg{width:18px;height:18px}
+
+    /* menu desktop */
+    nav.primary-nav{display:flex; align-items:center; gap:24px}
+    .menu{display:flex; gap:22px; list-style:none; margin:0; padding:0}
+    .menu a{
+      color: var(--muted);
+      padding: 8px 0;
+      transition: color .15s ease;
+    }
+    .menu a:hover{color: var(--text)}
+
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 18px; border-radius:12px;
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      color: var(--text);
+      box-shadow: var(--shadow);
+      transition: transform .15s ease, box-shadow .15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn.primary{background: linear-gradient(135deg, var(--brand), var(--brand-2)); border-color: transparent}
+    .btn.ghost{background: transparent}
+    .btn.sm{padding:10px 14px; border-radius:10px}
+
+    /* mobile */
+    .menu-toggle{
+      display:none;
+      border:1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      border-radius:10px;
+      padding:8px 12px;
+    }
+    .mobile-panel{
+      display:none;
+      position:absolute; left:0; right:0; top:72px;
+      background: rgba(12,10,16,0.98);
+      border-bottom:1px solid var(--border);
+    }
+    .mobile-panel a{
+      display:block; padding:14px 20px;
+      border-top:1px solid var(--border);
+      color: var(--muted);
+    }
+    .mobile-panel a:hover{color: var(--text)}
+
+    @media(max-width: 880px){
+      nav.primary-nav{display:none}
+      .menu-toggle{display:inline-flex}
+    }
+
+    /* ===========
+       SEKCJE
+       =========== */
+    section{padding:56px 0; border-top:1px solid var(--border)}
+    .hero{padding:108px 0 56px; border-top: none}
+    .eyebrow{
+      display:inline-block; padding:6px 10px;
+      border:1px solid var(--border); border-radius:999px;
+      color: var(--muted); font-size:12px; letter-spacing:.4px
+    }
+    h1{font-size: clamp(28px, 4.5vw, 56px); line-height:1.1; margin:16px 0 12px}
+    .lead{font-size: clamp(16px, 1.2vw, 20px); color:var(--muted); max-width:820px}
+    .hero-cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:24px}
+
+    .section-title{font-size: clamp(22px, 3vw, 36px); margin:0 0 8px}
+    .section-sub{color:var(--muted); max-width:820px; margin:0 0 24px}
+
+    .grid{display:grid; gap:16px}
+    @media(min-width:720px){
+      .grid.cols-3{grid-template-columns: repeat(3,1fr)}
+      .grid.cols-2{grid-template-columns: repeat(2,1fr)}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border:1px solid var(--border);
+      border-radius:16px; padding:18px;
+    }
+    .card-strong{
+      background: linear-gradient(180deg, color-mix(in oklab, var(--brand) 12%, transparent), rgba(110,0,255,0.04));
+    }
+    .muted{color:var(--muted)}
+
+    /* „Reason” numerki */
+    .reason{display:flex; gap:14px; align-items:flex-start}
+    .reason .num{
+      min-width:36px; height:36px; border-radius:10px;
+      display:grid; place-items:center; font-weight:800;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    }
+
+    /* timeline */
+    .timeline{position:relative; padding-left:20px}
+    .timeline:before{
+      content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px;
+      background: linear-gradient(var(--brand), transparent);
+    }
+    .tl-item{position:relative; margin:8px 0; padding-left:16px}
+    .tl-item:before{
+      content:""; position:absolute; left:-4px; top:8px; width:12px; height:12px; border-radius:50%;
+      background: linear-gradient(var(--brand), var(--brand-2));
+      box-shadow: 0 0 0 2px var(--bg);
+    }
+
+    /* pricing */
+    .pricing{display:grid; gap:16px}
+    @media(min-width:960px){.pricing{grid-template-columns: repeat(3,1fr)}}
+    .tier{border:1px solid var(--border); border-radius:18px; padding:22px; background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))}
+    .tier h3{margin:0 0 6px}
+    .pill{display:inline-block; border:1px solid var(--border); padding:6px 10px; border-radius:999px; font-size:12px; color:var(--muted)}
+    .price{font-size:28px; font-weight:800; margin:12px 0}
+    .features{list-style:none; padding:0; margin:12px 0 0}
+    .features li{display:flex; gap:10px; align-items:flex-start; margin:8px 0}
+    .check{width:18px; height:18px; border-radius:4px; display:grid; place-items:center; color:#07180f}
+    .check.good{background: var(--good)}
+    .check.better{background: var(--better)}
+    .check.best{background: var(--best)}
+    .spacer{height:18px}
+
+    /* FAQ */
+    details{border:1px solid var(--border); border-radius:14px; padding:14px; background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))}
+    details+details{margin-top:10px}
+    summary{cursor:pointer; font-weight:600}
+
+    /* Stopka */
+    footer{padding:40px 0; border-top:1px solid var(--border); color:var(--muted)}
+
+    /* drobne utilsy */
+    .center{display:flex; justify-content:center; align-items:center}
+    .tag{font-size:12px; color:var(--muted)}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;border:1px solid var(--border);border-radius:6px;padding:2px 6px;font-size:12px;background:rgba(255,255,255,0.03)}
+
+    /* Gradient */
+    
+  .grad {
+  background: linear-gradient(90deg, var(--primary-2), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* dla WebKit (Chrome, Safari) */
+  color: transparent; /* fallback */
+  }
+
+
+
+:root{
+  --bg: #0f1220;
+  --surface: #171a2b;
+  --surface-2:#1f2236;
+  --text: #e7e9f1;
+  --muted:#a7acc2;
+  --primary:#6a5ae0;
+  --primary-2:#6E00FF;
+  --accent:#FF00A8;
+  --success:#22c55e;
+  --ring: #3f47ff44;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px; padding:12px 18px;border-radius:10px;border:1px solid transparent; text-decoration:none; cursor:pointer; transition:.2s ease; font-weight:600}
+.btn:focus{outline:2px solid var(--ring); outline-offset:2px}
+.btn-primary{background:linear-gradient(135deg,var(--primary), var(--primary-2)); color:#fff; box-shadow: var(--shadow)}
+.btn-primary:hover{filter:brightness(1.05)}
+.btn-secondary{background:transparent; border-color:#2a2f4a; color:var(--text)}
+.btn-secondary:hover{border-color:#3a4062}
+.btn-ghost{background:transparent;color:var(--muted)}
+.btn-ghost:hover{color:var(--text)}
+.btn.full{width:100%}
+
+
+
+  </style>
+</head>
+<body class="page-bg">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      LOGO        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 6h12M6 12h8M6 18h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span><a href="#hero">Finerlo</span>
+      </a>
+
+      <!-- NAV desktop (jak valcreon: pozioma lista + CTA) -->
+      <nav class="primary-nav" aria-label="Główne">
+        <ul class="menu">
+          <li><a href="#powody">Powody</a></li>
+          <li><a href="#dlaczego">Dlaczego M365</a></li>
+          <li><a href="#lokalna">Lokalna kopia</a></li>
+          <li><a href="#jak">Jak to działa</a></li>
+          <li><a href="#cennik">Cennik</a></li>
+          <li><a href="#faq">FAQ</a></li>
+	  <li><a href="#formularz">Formularz</a></li>
+       </nav>
+
+      <!-- NAV mobile -->
+      <button class="menu-toggle" aria-label="Otwórz menu" onclick="toggleMenu()">Menu</button>
+    </div>
+
+ 
+<!-- NAV mobile -->
+<button class="menu-toggle" aria-label="Otwórz menu" onclick="toggleMenu()">Menu</button>
+
+<div id="mobilePanel" class="mobile-panel" aria-label="Menu mobilne">
+          <li><a href="#powody">Powody</a></li>
+          <li><a href="#dlaczego">Dlaczego M365</a></li>
+          <li><a href="#lokalna">Lokalna kopia</a></li>
+          <li><a href="#jak">Jak to działa</a></li>
+          <li><a href="#cennik">Cennik</a></li>
+          <li><a href=""#faq">FAQ</a></li>
+	  <li><a href=""formularz">Formularz</a></li>
+</div>
+
+
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- Hero / Claim -->
+    <section id="hero">
+      <div class="container">
+        <span class="eyebrow">Usługa krytyczna</span>
+        <h1>Lokalny Backup<br/> <span class="grad">Microsoft 365</span> dla lokalnych firm</h1>
+        <p class="lead">Fizyczna kopia zapasowa danych M365 na dyskach, <span class="grad"><strong>w Polsce</strong></span>.<BR> Wdrożenie nawet w <span class="grad"><strong>1 dzień</strong></span>.<BR> Pełna <span class="grad"><strong>suwerenność </strong></span> danych i szybkie odtwarzanie poczty Exchange Online, OneDrive, SharePoint oraz Teams.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" a href="#formularz">Zamów wdrożenie</a>
+          <a class="btn btn-secondary" a href="#jak">Zobacz jak to działa</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja 1: Powody -->
+    <section id="powody">
+      <div class="container">
+        <h2 class="section-title">Trzy powody, dla których firmy wybierają Finerlo</h2>
+        <p class="section-sub">Proste, konkretne i sprawdzone w realnych wdrożeniach.</p>
+        <div class="grid cols-3">
+          <div class="card reason">
+            <div class="num" aria-hidden="true">1</div>
+            <div>
+              <h3>Backup w 1 dzień</h3>
+              <p class="muted">Szybkie uruchomienie bez przestojów.</p>
+            </div>
+          </div>
+          <div class="card reason">
+            <div class="num" aria-hidden="true">2</div>
+            <div>
+              <h3>Na dyskach - nie w chmurze</h3>
+              <p class="muted">Fizyczne przechowywnai na dyskach w Polsce.</p>
+            </div>
+          </div>
+          <div class="card reason">
+            <div class="num" aria-hidden="true">3</div>
+            <div>
+              <h3>Wszystkie dane w Polsce</h3>
+              <p class="muted">Lokalizacja danych niezależna od Microsoft.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja 2: Dlaczego kopia zapasowa dla Microsoft 365? -->
+    <section id="dlaczego">
+      <div class="container">
+        <h2 class="section-title">Dlaczego kopia zapasowa dla Microsoft 365?</h2>
+        <p class="section-sub">M365 zapewnia wysoką dostępność, ale odpowiedzialność za backup leży po stronie klienta (zasada <em>shared responsibility</em>). Dlatego backup to nie opcja — to konieczność.</p>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>Typowe ryzyka</h3>
+            <ul>
+              <li>Przypadkowe lub celowe usuwanie danych przez użytkowników.</li>
+              <li>Ataki ransomware / malware rozciągające się na M365.</li>
+              <li>Ograniczone retencje i kosze — po czasie dane znikają.</li>
+              <li>Błędy konfiguracji, migracje, zmiany licencji.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Co daje niezależny backup</h3>
+            <ul>
+              <li>Granularne przywracanie: pojedyncze maile, pliki, witryny.</li>
+              <li>Ochrona przed lock-in: dane dostępne nawet bez M365.</li>
+              <li>Spełnienie wymagań audytowych i RODO.</li>
+              <li>Kontrola kosztów i przewidywalność.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja 3: Lokalna kopia zapasowa -->
+    <section id="lokalna">
+      <div class="container">
+        <h2 class="section-title">Lokalna kopia zapasowa — prosto i skutecznie</h2>
+        <p class="section-sub">Tworzymy kopię danych Microsoft 365 na Twoim urządzeniu (NAS/serwer) w biurze lub w bezpiecznej serwerowni. Dane są szyfrowane, wersjonowane i gotowe do szybkiego przywrócenia.</p>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>Na Twoim sprzęcie</h3>
+            <p class="muted">Brak chmury oznacza pełną kontrolę i brak opłat za transfer przy odtwarzaniu.</p>
+          </div>
+          <div class="card">
+            <h3>Szyfrowanie + wersjonowanie</h3>
+            <p class="muted">Chronimy dane przed nieautoryzowanym dostępem i błędami ludzkimi.</p>
+          </div>
+          <div class="card">
+            <h3>Monitoring i testy</h3>
+            <p class="muted">Monitorujemy zadania i cyklicznie testujemy przywracanie, żeby działało wtedy, gdy jest potrzebne.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sekcja 4: Korzyści -->
+    <section id="korzysci">
+      <div class="container">
+        <h2 class="section-title">Co zyskujesz posiadając kopię zapasową?</h2>
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>Suwerenność danych</h3>
+            <p class="muted">Ty decydujesz, gdzie są dane i kto ma do nich dostęp.</p>
+          </div>
+          <div class="card">
+            <h3>Szybkie odtwarzanie</h3>
+            <p class="muted">Przywracamy pojedyncze elementy lub całe zbiory bez zatrzymywania pracy zespołu.</p>
+          </div>
+          <div class="card">
+            <h3>Przewidywalne koszty</h3>
+            <p class="muted">Bez opłat egress i bez zaskoczeń. Polityki retencji dopasowane do wymagań.</p>
+          </div>
+          <div class="card">
+            <h3>RPO / RTO pod kontrolą</h3>
+            <p class="muted">Harmonogramy dopasowane do Twojego ryzyka i okien serwisowych.</p>
+          </div>
+          <div class="card">
+            <h3>Zgodność i audyty</h3>
+            <p class="muted">Łatwiej spełnić wymagania klientów, kontraktów i RODO.</p>
+          </div>
+          <div class="card">
+            <h3>Elastyczność</h3>
+            <p class="muted">Skalujesz pojemność tak, jak rośnie biznes. Masz dostęp offline do archiwów.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jak to działa -->
+    <section id="jak">
+      <div class="container">
+        <h2 class="section-title">Jak to działa?</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <h3>1) Krótka analiza</h3>
+            <p class="muted">Ustalamy zakres (Exchange, OneDrive, SharePoint, Teams), retencje i wymagania bezpieczeństwa.</p>
+          </div>
+          <div class="tl-item">
+            <h3>2) Wdrożenie (do 1 dnia)</h3>
+            <p class="muted">Konfigurujemy połączenie z M365, harmonogramy i pierwsze pełne zadanie backupu.</p>
+          </div>
+          <div class="tl-item">
+            <h3>3) Kopie przyrostowe</h3>
+            <p class="muted">Automatyczne zadania dzienne/godzinowe, raportowanie i alerty.</p>
+          </div>
+          <div class="tl-item">
+            <h3>4) Testy przywracania</h3>
+            <p class="muted">Cykliczne próby odtworzenia, żeby mieć pewność, że wszystko działa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jak przywrócić -->
+    <section id="przywracanie">
+      <div class="container">
+        <h2 class="section-title">Jak mogę przywrócić dane z kopii lokalnej?</h2>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>Przywracanie granularne</h3>
+            <p class="muted">Odtwarzamy pojedyncze wiadomości e-mail, pliki OneDrive/SharePoint, elementy Teams lub całe skrzynki/witryny.</p>
+          </div>
+          <div class="card">
+            <h3>Eksport i self‑service</h3>
+            <p class="muted">Eksport do formatów zgodnych z audytem (np. PST/ZIP) lub dostęp tylko do odczytu dla wybranych osób.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scenariusze -->
+    <section id="scenariusze">
+      <div class="container">
+        <h2 class="section-title">Scenariusze, w których przywracanie ratuje firmę</h2>
+        <div class="grid cols-3">
+          <div class="card"><h3>Ransomware</h3><p class="muted">Szybki powrót do wersji sprzed ataku bez negocjacji z napastnikami.</p></div>
+          <div class="card"><h3>Odejście pracownika</h3><p class="muted">Zabezpieczenie poczty i plików po dezaktywacji konta.</p></div>
+          <div class="card"><h3>Migracje / błędy</h3><p class="muted">Odtworzenie danych po pomyłkach konfiguracyjnych lub nieudanej migracji.</p></div>
+          <div class="card"><h3>Retencje wygasły</h3><p class="muted">Dane zniknęły z kosza? Przywracamy z kopii.</p></div>
+          <div class="card"><h3>Wymogi prawne</h3><p class="muted">Archiwa na potrzeby e‑discovery i kontroli.</p></div>
+          <div class="card"><h3>Incydenty fizyczne</h3><p class="muted">Awarie lub kradzież laptopów nie zatrzymują pracy — dane są w kopii.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cennik -->
+    <section id="cennik">
+      <div class="container">
+        <h2 class="section-title">Cennik</h2>
+        <p class="section-sub">Trzy proste warianty. <span class="kbd">Na wycenę</span> — dopasowujemy do wielkości organizacji i zakresu.</p>
+        <div class="pricing">
+          <div class="tier">
+            <span class="pill">Good</span>
+            <h3>Start</h3>
+            <p class="muted">Solidny fundament kopii M365 na Twoim sprzęcie.</p>
+            <div class="price">Na wycenę</div>
+            <ul class="features">
+              <li><span class="check good">✓</span> Backup Exchange & OneDrive</li>
+              <li><span class="check good">✓</span> Dzienne kopie przyrostowe</li>
+              <li><span class="check good">✓</span> Szyfrowanie w spoczynku</li>
+              <li><span class="check good">✓</span> Podstawowe raporty</li>
+            </ul>
+            <div class="spacer"></div>
+            #formularzWybierz Start</a>
+          </div>
+          <div class="tier card-strong">
+            <span class="pill">Better</span>
+            <h3>Pro</h3>
+            <p class="muted">Więcej zakresu i kontroli retencji dla zespołów.</p>
+            <div class="price">Na wycenę</div>
+            <ul class="features">
+              <li><span class="check better">✓</span> + SharePoint & Teams</li>
+              <li><span class="check better">✓</span> Polityki retencji dopasowane</li>
+              <li><span class="check better">✓</span> Zaawansowane raporty i alerty</li>
+              <li><span class="check better">✓</span> Test odtwarzania kwartalny</li>
+            </ul>
+            <div class="spacer"></div>
+            #formularzWybierz Pro</a>
+          </div>
+          <div class="tier">
+            <span class="pill">Best</span>
+            <h3>Enterprise</h3>
+            <p class="muted">Maksymalne bezpieczeństwo i odporność.</p>
+            <div class="price">Na wycenę</div>
+            <ul class="features">
+              <li><span class="check best">✓</span> Wysoka dostępność/HA</li>
+              <li><span class="check best">✓</span> Kopia off‑site (druga lokalizacja)</li>
+              <li><span class="check best">✓</span> Testy odtwarzania miesięczne</li>
+              <li><span class="check best">✓</span> Priorytetowe wsparcie</li>
+            </ul>
+            <div class="spacer"></div>
+            #formularzWybierz Enterprise</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formularz -->
+    <section id="formularz">
+      <div class="container">
+        <h2 class="section-title">Formularz wdrożeniowy</h2>
+        <p class="section-sub">Wypełnij krótkie zgłoszenie — przygotujemy dopasowaną ofertę i termin wdrożenia.</p>
+        <div class="card center" style="flex-direction:column;gap:12px;padding:24px;">
+          <!-- TODO: Podmień adres niżej na docelowy link do Microsoft Forms -->
+          https://forms.office.com/Otwórz formularz w Microsoft Forms</a>
+          <span class="tag">Potrzebujesz innego kanału? Napisz w uwagach w formularzu.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <h2 class="section-title">Pytania i odpowiedzi</h2>
+        <details>
+          <summary>Czy Microsoft robi backup moich danych w M365?</summary>
+          <div class="muted">Microsoft zapewnia infrastrukturę i wysoką dostępność, ale ochrona przed utratą danych po stronie użytkownika (np. usunięcia, ransomware) wymaga niezależnej kopii. To model współdzielonej odpowiedzialności.</div>
+        </details>
+        <details>
+          <summary>Jak szybko mogę zacząć?</summary>
+          <div class="muted">Najczęściej uruchamiamy pierwszą pełną kopię w ciągu jednego dnia roboczego od uzgodnienia zakresu.</div>
+        </details>
+        <details>
+          <summary>Czy macie dostęp do moich danych?</summary>
+          <div class="muted">Stosujemy zasady minimalnych uprawnień i szyfrowanie. Dostęp jest ograniczony do działań administracyjnych zgodnie z umową i logowany.</div>
+        </details>
+        <details>
+          <summary>Jak długo przechowujecie dane?</summary>
+          <div class="muted">Określamy polityki retencji zgodne z Twoimi wymaganiami biznesowymi i prawnymi (np. 6, 12, 24+ miesięcy).</div>
+        </details>
+        <details>
+          <summary>Jakie są wymagania sprzętowe?</summary>
+          <div class="muted">Wystarczy serwer/NAS z odpowiednią pojemnością i łączem. Dobieramy konfigurację do wielkości danych w tenantcie.</div>
+        </details>
+        <details>
+          <summary>Czy to zgodne z RODO?</summary>
+          <div class="muted">Tak — dane pozostają w Polsce, mamy umowy powierzenia i mechanizmy audytowe. Pomagamy przygotować dokumentację.</div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <strong>Finerlo</strong>
+        </div>
+        <div>
+          <span class="tag">© <span id="y"></span> Finerlo. Wszystkie prawa zastrzeżone.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      const panel = document.getElementById('mobilePanel');
+      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    }
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Smooth scroll dla linków kotwicznych (nie dotyczy zewnętrznych)
+    document.addEventListener('click', function(e){
+      const a = e.target.closest('a[href^="#"]');
+      if(!a) return;
+      const id = a.getAttribute('href').slice(1);
+      if(!id) return;
+      const target = document.getElementById(id);
+      if(target){
+        e.preventDefault();
+        window.scrollTo({top: target.getBoundingClientRect().top + window.scrollY - 78, behavior:'smooth'});
+      }
+    });
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Finerlo",
+    "url": "https://finerlo.com",
+    "logo": "https://finerlo.com/logo.png",
+    "sameAs": []
+  }
+  </script>
+</body>
+</html>

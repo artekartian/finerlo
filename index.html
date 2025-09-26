@@ -179,6 +179,9 @@ favicon.ico?
       .menu-toggle{display:inline-flex}
     }
 
+	  .mobile-panel.open{display: block;
+	}
+
     /* ===========
        SEKCJE
        =========== */
@@ -665,6 +668,23 @@ favicon.ico?
     });
   </script>
 
+	<script>
+  function toggleMenu() {
+    const panel = document.getElementById('mobilePanel');
+    panel.classList.toggle('open');
+  }
+
+  // Zamykanie menu po kliknięciu linku
+  document.addEventListener('DOMContentLoaded', function () {
+    const links = document.querySelectorAll('#mobilePanel a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobilePanel').classList.remove('open');
+      });
+    });
+  });
+</script>
+
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -679,6 +699,7 @@ favicon.ico?
 </body>
 
 </html>
+
 
 
 

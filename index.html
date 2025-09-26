@@ -153,14 +153,19 @@ favicon.ico?
     .btn.sm{padding:10px 14px; border-radius:10px}
 
     /* mobile */
-    .menu-toggle{
-      display:none;
-      border:1px solid var(--border);
-      background: transparent;
-      color: var(--text);
-      border-radius:10px;
-      padding:8px 12px;
-    }
+   
+.menu-toggle {
+  width: 28px;
+  height: 28px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 6h12M6 12h8M6 18h4" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+}
+
+	  
     .mobile-panel{
       display:none;
       position:absolute; left:0; right:0; top:72px;
@@ -332,7 +337,7 @@ favicon.ico?
 
      
 <!-- NAV mobile -->
-<button class="menu-toggle" aria-label="Otwórz menu" onclick="toggleMenu()">Menu</button>
+<button class="menu-toggle" aria-label="Otwórz menu" onclick="toggleMenu()"></button>
 
 <div id="mobilePanel" class="mobile-panel" aria-label="Menu mobilne">
           <li><a href="#powody">Powody</a></li>
@@ -699,6 +704,7 @@ favicon.ico?
 </body>
 
 </html>
+
 
 
 

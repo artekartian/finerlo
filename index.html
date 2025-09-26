@@ -157,16 +157,10 @@ favicon.ico?
     .btn.sm{padding:10px 14px; border-radius:10px}
 
     /* mobile */
-   
-.menu-toggle {
-  width: 28px;
-  height: 28px;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 6h12M6 12h8M6 18h4" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  border: none;
-  background-color: transparent;
+:root {
+  --border: #444;
+  --text: #fff;
+  --muted: #aaa;
 }
 
 /* Domyślnie ukryj mobilne menu i przycisk */
@@ -175,39 +169,64 @@ favicon.ico?
   display: none;
 }
 
-/* Pokaż tylko na urządzeniach mobilnych */
+/* Styl przycisku z ikoną SVG */
+.menu-toggle {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 6h12M6 12h8M6 18h4' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px 28px;
+  cursor: pointer;
+}
+
+/* Styl panelu mobilnego z animacją */
+.mobile-panel {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  position: absolute;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: rgba(12, 10, 16, 0.98);
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-panel.open {
+  max-height: 500px; /* dostosuj do zawartości */
+  opacity: 1;
+}
+
+.mobile-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-panel a {
+  display: block;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.mobile-panel a:hover {
+  color: var(--text);
+}
+
+/* Widok mobilny */
 @media (max-width: 880px) {
   .menu-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
-
-  .mobile-panel.open {
-    display: block;
-  }
 }
-	  
-    .mobile-panel{
-      display:none;
-      position:absolute; left:0; right:0; top:72px;
-      background: rgba(12,10,16,0.98);
-      border-bottom:1px solid var(--border);
-    }
-    .mobile-panel a{
-      display:block; padding:14px 20px;
-      border-top:1px solid var(--border);
-      color: var(--muted);
-    }
-    .mobile-panel a:hover{color: var(--text)}
-
-    @media(max-width: 880px){
-      nav.primary-nav{display:none}
-      .menu-toggle{display:inline-flex}
-    }
-
-	  .mobile-panel.open{display: block;
-	}
 
     /* ===========
        SEKCJE
@@ -674,34 +693,12 @@ favicon.ico?
     </div>
   </footer>
 
-  <script>
-    function toggleMenu(){
-      const panel = document.getElementById('mobilePanel');
-      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-    }
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Smooth scroll dla linków kotwicznych (nie dotyczy zewnętrznych)
-    document.addEventListener('click', function(e){
-      const a = e.target.closest('a[href^="#"]');
-      if(!a) return;
-      const id = a.getAttribute('href').slice(1);
-      if(!id) return;
-      const target = document.getElementById(id);
-      if(target){
-        e.preventDefault();
-        window.scrollTo({top: target.getBoundingClientRect().top + window.scrollY - 78, behavior:'smooth'});
-      }
-    });
-  </script>
-
-	<script>
+<script>
   function toggleMenu() {
     const panel = document.getElementById('mobilePanel');
     panel.classList.toggle('open');
   }
 
-  // Zamykanie menu po kliknięciu linku
   document.addEventListener('DOMContentLoaded', function () {
     const links = document.querySelectorAll('#mobilePanel a');
     links.forEach(link => {
@@ -711,6 +708,8 @@ favicon.ico?
     });
   });
 </script>
+
+
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -726,6 +725,7 @@ favicon.ico?
 </body>
 
 </html>
+
 
 
 

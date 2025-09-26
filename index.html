@@ -183,6 +183,13 @@ favicon.ico?
       .menu-toggle{display:inline-flex}
     }
 
+	  .mobile-panel{display: none;
+	/* inne style */
+	}
+
+	.mobile-panel.open{display: block;
+	}
+
     /* ===========
        SEKCJE
        =========== */
@@ -311,7 +318,8 @@ favicon.ico?
   <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      LOGO        <span class="logo-mark" aria-hidden="true">
+		<img src="LOGOBanner480.png" alt="Logo Finerlo.com" class="banner-100"> </div>
+        
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 6h12M6 12h8M6 18h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
           </svg>
@@ -333,7 +341,11 @@ favicon.ico?
 
      
 <!-- NAV mobile -->
-<button class="menu-toggle" aria-label="Otwórz menu" onclick="toggleMenu()">Menu</button>
+<button class="menu-toggle" aria-label="Otwórz menu" onclick="toggleMenu()">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+    <path d="M6 6h12M6 12h8M6 18h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+  </svg>
+</button>
 
 <div id="mobilePanel" class="mobile-panel" aria-label="Menu mobilne">
           <li><a href="#powody">Powody</a></li>
@@ -341,8 +353,8 @@ favicon.ico?
           <li><a href="#lokalna">Lokalna kopia</a></li>
           <li><a href="#jak">Jak to działa</a></li>
           <li><a href="#cennik">Cennik</a></li>
-          <li><a href=""#faq">FAQ</a></li>
-	  <li><a href=""formularz">Formularz</a></li>
+          <li><a href="#faq">FAQ</a></li>
+	 	  <li><a href="formularz">Formularz</a></li>
 </div>
 
 

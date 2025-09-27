@@ -132,6 +132,27 @@ favicon.ico?
 		width: 100px;
 	}
 
+
+	.logo-link {
+  display: inline-block;
+  margin-right: 1rem;
+	}
+
+	.logo-image {
+  height: 40px;
+  width: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+	.logo-link:hover .logo-image {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+	}
+
+
+
+
+	  
     /* menu desktop */
     nav.primary-nav{display:flex; align-items:center; gap:24px}
     .menu{display:flex; gap:22px; list-style:none; margin:0; padding:0}
@@ -328,6 +349,19 @@ favicon.ico?
 .btn-ghost:hover{color:var(--text)}
 .btn.full{width:100%}
 
+/* LOGO */
+
+.logo-image{
+  height: 40px;
+  width: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-link:hover .logo-image{
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
 
 
   </style>
@@ -337,14 +371,25 @@ favicon.ico?
 	
   <!-- HEADER -->
   <header class="site-header">
-    <div class="container header-inner">
-      LOGO        <span class="logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 6h12M6 12h8M6 18h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
-          </svg>
-        </span>
-        <span><a href="#hero">Finerlo.com</span>
-      </a>
+   
+  <div class="container header-inner">
+
+    <!-- Logo jako link do sekcji #hero -->
+    #hero
+      <img src="logo.jpg" alt="Logo Finerenu (hamburger) -->
+    <span class="logo-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 6h12M6 12h8M6 18h4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+    </span>
+
+    <!-- Nazwa Finerlo jako link -->
+    <span class="site-name">
+      #heroFinerlo.com</a>
+    </span>
+
+  </div>
+
 
       <!-- NAV desktop (jak valcreon: pozioma lista + CTA) -->
       <nav class="primary-nav" aria-label="Główne">
@@ -727,6 +772,7 @@ favicon.ico?
 </body>
 
 </html>
+
 
 
 

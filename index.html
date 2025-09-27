@@ -1,22 +1,20 @@
 
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Finerlo - lokalny backup Microsoft 365</title>
-  <meta name="description" content="Lokalny backup Microsoft 365 dla firm. Kopia zapasowa na dyskach w Polsce. Wdrożenie nawet w 1 dzień. Suwerenność danych i szybkie odtwarzanie." />
-  <meta name="theme-color" content="#6E00FF" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://finerlo.com/" />
-  <meta property="og:title" content="Finerlo. Lokalny backup Microsoft 365 dla lokalnych firm." />
-  <meta property="og:description" content="Lokalna kopia zapasowa Microsoft 365 na dyskach, w Polsce. Wdrożenie w 1 dzień. Pełna kontrola i szybkie przywracanie danych." />
-  <meta property="og:image" content="https://finerlo.com/og-image.png" />
-
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Finerlo - lokalny backup Microsoft 365</title>
+<meta content="Lokalny backup Microsoft 365 dla firm. Kopia zapasowa na dyskach w Polsce. Wdrożenie nawet w 1 dzień. Suwerenność danych i szybkie odtwarzanie." name="description"/>
+<meta content="#6E00FF" name="theme-color"/>
+<!-- Open Graph -->
+<meta content="website" property="og:type"/>
+<meta content="https://finerlo.com/" property="og:url"/>
+<meta content="Finerlo. Lokalny backup Microsoft 365 dla lokalnych firm." property="og:title"/>
+<meta content="Lokalna kopia zapasowa Microsoft 365 na dyskach, w Polsce. Wdrożenie w 1 dzień. Pełna kontrola i szybkie przywracanie danych." property="og:description"/>
+<meta content="https://finerlo.com/og-image.png" property="og:image"/>
+<style>
 
 /* Favicon*/
 favicon.ico?
@@ -285,6 +283,7 @@ favicon.ico?
 
     /* Stopka */
     footer{padding:40px 0; border-top:1px solid var(--border); color:var(--muted)}
+	.footer-link:hover{color: #333; /* lub inny kolor */}
 
     /* drobne utilsy */
     .center{display:flex; justify-content:center; align-items:center}
@@ -330,357 +329,401 @@ favicon.ico?
 
 /* LOGO */
 
+/* LINKS*/
+
 
 
   </style>
 </head>
 <body class="page-bg">
-
 <!-- Language Switcher -->
-<div style="width:100%;text-align:center;padding:6px 0;background:#222;color:#fff;font-size:12px;font-family:sans-serif;"><a href="index_en.html" style="color:#fff;text-decoration:none;">English Version</a> | <a href="index_de.html" style="color:#fff;text-decoration:none;">German Version</a></div>
-	
+
+<div style="width:100%;text-align:center;padding:6px 0;background:#222;color:#fff;font-size:12px;font-family:sans-serif;">
+<span class="pill"><a href="index_en.html"style="color:#fff;text-decoration:none;">English Version</a></span>  <span class="pill"> <a href="index_de.html" style="color:#fff;text-decoration:none;">German Version</a></div></span>
+
+
+
 <!-- HEADER -->
+
+
 <header class="site-header">
+
 <div class="container header-inner">
-      LOGO        <span aria-hidden="true" class="logo-mark">
-<svg fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M6 6h12M6 12h8M6 18h4" stroke="#fff" stroke-linecap="round" stroke-width="2.2"></path>
-</svg>
-</span>
-<span><a href="#hero">Finerlo.com</a></span>
+<a href="#hero"><img alt="Finerlo Logo" class="banner-100" src="LOGOBanner480.png" class="banner-100"/></a>
 
-	
-	 
-      <!-- NAV desktop (jak valcreon: pozioma lista + CTA) -->
-      <nav class="primary-nav" aria-label="Główne">
-        <ul class="menu">
-          <li><a href="#powody">Powody</a></li>
-          <li><a href="#dlaczego">Dlaczego M365</a></li>
-          <li><a href="#lokalna">Lokalna kopia</a></li>
-          <li><a href="#jak">Jak to działa</a></li>
-          <li><a href="#cennik">Cennik</a></li>
-          <li><a href="#faq">FAQ</a></li>
-	 	  <li><a href="#formularz">Formularz</a></li>
-       </nav>
 
-     
+<!-- NAV desktop (jak valcreon: pozioma lista + CTA) -->
+<nav aria-label="Główne" class="primary-nav">
+<ul class="menu">
+<li><a href="#powody">Powody</a></li>
+<li><a href="#dlaczego">Dlaczego M365</a></li>
+<li><a href="#lokalna">Lokalna kopia</a></li>
+<li><a href="#jak">Jak to działa</a></li>
+<li><a href="#cennik">Cennik</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#formularz">Formularz</a></li>
+</ul></nav>
 <!-- NAV mobile -->
-<button class="menu-toggle" aria-label="Otwórz menu" onclick="toggleMenu()"></button>
+<button aria-label="Otwórz menu" class="menu-toggle" onclick="toggleMenu()"></button>
+<div aria-label="Menu mobilne" class="mobile-panel" id="mobilePanel">
+<li><a href="#powody">Powody</a></li>
+<li><a href="#dlaczego">Dlaczego M365</a></li>
+<li><a href="#lokalna">Lokalna kopia</a></li>
+<li><a href="#jak">Jak to działa</a></li>
+<li><a href="#cennik">Cennik</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#formularz">Formularz</a></li>
+</div>
+</div></header>
+<!-- MAIN -->
+<main>
+<!-- Hero / Claim -->
+<section id="hero">
+<div class="container">
+<span class="eyebrow">Usługa krytyczna</span>
+<h1>Lokalny Backup<br/> <span class="grad">Microsoft 365</span> dla lokalnych firm</h1>
 
-<div id="mobilePanel" class="mobile-panel" aria-label="Menu mobilne">
-          <li><a href="#powody">Powody</a></li>
-          <li><a href="#dlaczego">Dlaczego M365</a></li>
-          <li><a href="#lokalna">Lokalna kopia</a></li>
-          <li><a href="#jak">Jak to działa</a></li>
-          <li><a href="#cennik">Cennik</a></li>
-          <li><a href="#faq">FAQ</a></li>
-		  <li><a href="#formularz">Formularz</a></li>
+<p class="lead">Fizyczna kopia zapasowa Twoich danych M365 na dyskach przechowywanych w <span class="grad"> <strong>Polsce</strong></span>.<br/>
+Pełna <span class="grad"><strong>suwerenność </strong></span> danych i <span class="grad"><strong>niezależność </strong></span> od korporacji.<br>
+Wdrożenie nawet w jeden <span class="grad"><strong> dzień</strong></span>.</p>
+
+
+<div class="hero-cta">
+<a a="" class="btn btn-primary" href="#formularz">Zamów wdrożenie</a>
+<a a="" class="btn btn-secondary" href="#jak">Zobacz jak to działa</a>
+</div>
+</div>
+</section>
+
+
+<!-- Sekcja 1: Powody -->
+<section id="powody">
+<div class="container">
+<h2 class="section-title">Trzy powody, dla których firmy wybierają Finerlo</h2>
+<p class="section-sub">Proste, konkretne i sprawdzone w realnych wdrożeniach.</p>
+<div class="grid cols-3">
+<div class="card reason">
+<div aria-hidden="true" class="num">1</div>
+<div>
+<h3>Backup jako usługa</h3>
+<p class="muted">Szybkie uruchomienie bez przestojów, inwestycji i integracji.</p>
+</div>
+</div>
+<div class="card reason">
+<div aria-hidden="true" class="num">2</div>
+<div>
+<h3>Na dyskach - nie w chmurze</h3>
+<p class="muted">Fizyczne przechowywanie na dyskach w Polsce.</p>
+</div>
+</div>
+<div class="card reason">
+<div aria-hidden="true" class="num">3</div>
+<div>
+<h3>Wszystkie dane w Polsce</h3>
+<p class="muted">Lokalizacja danych niezależna od Microsoft i amerykańskich korporacji.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- Sekcja 2: Dlaczego kopia zapasowa dla Microsoft 365? -->
+<section id="dlaczego">
+<div class="container">
+<h2 class="section-title">Dlaczego kopia zapasowa dla Microsoft 365?</h2>
+<p class="section-sub">M365 zapewnia wysoką dostępność, ale odpowiedzialność za dane leży po stronie klienta (zasada <em>shared responsibility</em> - współdzielonej odpowiedzialności). Dlatego backup to nie opcja - to konieczność.</p>
+<div class="grid cols-2">
+<div class="card">
+<h3>Typowe ryzyka</h3>
+<ul>
+<li>Przypadkowe lub celowe usunięcie danych przez użytkownika.</li>
+<li>Ataki ransomware / malware rozciągające się na M365.</li>
+<li>Ograniczone retencje i kosze — po czasie dane znikają.</li>
+<li>Błędy konfiguracji, migracje, zmiany licencji.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Co daje niezależny backup</h3>
+<ul>
+<li>Granularne przywracanie: pojedyncze maile, pliki, witryny.</li>
+<li>Ochrona przed lock-in: dane dostępne nawet bez M365.</li>
+<li>Spełnienie wymagań audytowych i RODO.</li>
+<li>Ochrona przed decyzjami geopolitycznymi (wyłączenie M365).</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- Sekcja 3: Lokalna kopia zapasowa -->
+<section id="lokalna">
+<div class="container">
+<h2 class="section-title">Lokalna kopia zapasowa - prosto i skutecznie</h2>
+<p class="section-sub">Tworzymy kopię danych Microsoft 365. Dane są szyfrowane, wersjonowane i gotowe do szybkiego przywrócenia.</p>
+<div class="grid cols-3">
+<div class="card">
+<h3>Wyspecjalizowane urządzenia</h3>
+<p class="muted">Brak chmury oznacza pełną kontrolę i brak opłat za transfer przy odtwarzaniu.</p>
+</div>
+<div class="card">
+<h3>Niezmienność danych</h3>
+<p class="muted">Chronimy kopie przed manipulacją, ransomware i błędami ludzkimi.</p>
+</div>
+<div class="card">
+<h3>Monitoring i testy</h3>
+<p class="muted">Monitorujemy zadania, dostęp i cyklicznie testujemy przywracanie.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<!-- Sekcja 4: Korzyści -->
+<section id="korzysci">
+<div class="container">
+<h2 class="section-title">Co zyskujesz posiadając kopię zapasową?</h2>
+<p class="section-sub">Jeśli działanie Microsoft 365 zostanie ograniczone geograficznie, można przywrócić dane z lokalnego backupu i kontynuować pracę w alternatywnym środowisku.</p>
+
+<div class="grid cols-3">
+<div class="card">
+<h3>Suwerenność danych</h3>
+<p class="muted">Ty decydujesz, gdzie są dane i kto ma do nich dostęp.</p>
+</div>
+<div class="card">
+<h3>Szybkie odtwarzanie</h3>
+<p class="muted">Przywracamy pojedyncze elementy lub całe zbiory bez zatrzymywania pracy zespołu.</p>
+</div>
+<div class="card">
+<h3>Przewidywalne koszty</h3>
+<p class="muted">Bez opłat egress i bez zaskoczeń. Polityki retencji dopasowane do wymagań.</p>
+</div>
+<div class="card">
+<h3>RPO / RTO pod kontrolą</h3>
+<p class="muted">Harmonogramy dopasowane do Twojego ryzyka i okien serwisowych.</p>
+</div>
+<div class="card">
+<h3>Zgodność i audyty</h3>
+<p class="muted">Łatwiej spełnić wymagania klientów, kontraktów i RODO.</p>
+</div>
+<div class="card">
+<h3>Elastyczność</h3>
+<p class="muted">Skalujesz pojemność tak, jak rośnie biznes. Masz dostęp offline do archiwów.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<!-- Jak to działa -->
+<section id="jak">
+<div class="container">
+<h2 class="section-title">Jak to działa?</h2>
+<p class="section-sub">Pierwsze kopie zasobów M365 będą tworzone od od razu po podpisaniu umowy. Co robimy krok po kroku:</p>
+
+<div class="timeline">
+<div class="tl-item">
+<h3> Raport użycia M365</h3>
+<p class="muted">Ustalamy, ile danych Exchange, OneDrive, SharePoint i Teams używa Twoja organizacja.</p>
+</div>
+<div class="tl-item">
+<h3> Plany ochrony</h3>
+<p class="muted">My proponujemy, Ty akceptujesz plany ochrony oraz plany archiwizacji Twoich danych.</p>
+</div>
+<div class="tl-item">
+<h3> Wdrożenie</h3>
+<p class="muted">Włączamy zadania tworzenia kopii zapasowej. Za 30 dni tworzymy archiwa.</p>
+</div>
+<div class="tl-item">
+<h3> Monitoring</h3>
+<p class="muted">Kontrolujemy status kopii zapasowej i kluczowe metryki.</p>
+</div>
+<div class="tl-item">
+<h3> Przywracanie</h3>
+<p class="muted">Cykliczne próby odtworzenia, żeby mieć pewność, że wszystko działa. Odtworzenia granularne w sytuacja awaryjnych.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- Jak przywrócić -->
+<section id="przywracanie">
+<div class="container">
+<h2 class="section-title">Jak mogę przywrócić dane z kopii lokalnej?</h2>
+<p class="section-sub">Dostępne są wszystkie ustalone i zachowane punkty przywracania.</p>
+
+<div class="grid cols-2">
+<div class="card">
+<h3>Przywracanie granularne</h3>
+<p class="muted">Odtwarzamy pojedyncze wiadomości e-mail, pliki OneDrive/SharePoint, elementy Teams lub całe skrzynki i witryny.</p>
+</div>
+<div class="card">
+<h3>Eksport i przywracanie</h3>
+<p class="muted">Eksport do formatów zgodnych z audytem (np. PST/ZIP) lub odtworznie w oryginalnej lub nowej lokalizacji.</p>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<!-- Scenariusze -->
+<section id="scenariusze">
+<div class="container">
+<h2 class="section-title">Scenariusze, w których przywracanie ratuje firmę</h2>
+<p class="section-sub">Wiele firm upada po ataku lub utracie danych. Należy ograniczać ryzyko.</p>
+
+<div class="grid cols-3">
+<div class="card"><h3>Ransomware</h3><p class="muted">Szybki powrót do wersji sprzed ataku bez negocjacji z hakerami.</p></div>
+<div class="card"><h3>Odejście pracownika</h3><p class="muted">Zabezpieczenie poczty i plików po dezaktywacji licencji.</p></div>
+<div class="card"><h3>Błędy synchronizacji</h3><p class="muted">Odtworzenie danych po pomyłkach lub nieudanej synchornizacji OneDrive.exe.</p></div>
+<div class="card"><h3>Retencje wygasły</h3><p class="muted">Dane zniknęły z kosza? Przywracamy z kopii.</p></div>
+<div class="card"><h3>Wymogi prawne</h3><p class="muted">Archiwa na potrzeby e‑discovery i kontroli audytowej.</p></div>
+<div class="card"><h3>Niedostępność M365</h3><p class="muted">Awarie i działania dywersyjne wymierzone w M365 nie zatrzymują pracy, ponieważ dane są w kopii lokalnej.</p></div>
+</div>
 </div>
 
 
-  </header>
 
-  <!-- MAIN -->
-  <main>
-    <!-- Hero / Claim -->
-    <section id="hero">
-      <div class="container">
-        <span class="eyebrow">Usługa krytyczna</span>
-        <h1>Lokalny Backup<br/> <span class="grad">Microsoft 365</span> dla lokalnych firm</h1>
-        <p class="lead">Fizyczna kopia zapasowa danych M365 na dyskach, <span class="grad"><strong>w Polsce</strong></span>.<BR> Wdrożenie nawet w <span class="grad"><strong>1 dzień</strong></span>.<BR> Pełna <span class="grad"><strong>suwerenność </strong></span> danych i szybkie odtwarzanie poczty Exchange Online, OneDrive, SharePoint oraz Teams.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" a href="#formularz">Zamów wdrożenie</a>
-          <a class="btn btn-secondary" a href="#jak">Zobacz jak to działa</a>
-        </div>
+</section>
+<!-- Cennik -->
+<section id="cennik">
+<div class="container">
+<h2 class="section-title">Cennik</h2>
+<p class="section-sub">Trzy proste warianty. <span class="kbd">dobry / lepszy / najlepszy</span> — dopasowujemy do wielkości organizacji i zakresu ochrony.</p>
+
+<div class="pricing">
+<div class="tier">
+
+
+<span class="pill">Dobry</span><br><br>
+<h3>Basic</h3>
+<p class="muted">Backup M365 do 100 GB</p>
+<div class="price">100 PLN/mc</div>
+<ul class="features">
+<li><span class="check good">✓</span> Backup Exchange &amp; OneDrive</li>
+<li><span class="check good">✓</span> Dzienne kopie przyrostowe</li>
+<li><span class="check good">✓</span> Brak niezmienności</li>
+<li><span class="check good">✓</span> Polityki retencji 30 dni</li>
+</ul>
+<div class="spacer"></div>
+<span class="pill"><a href="#formularz">Wybierz Basic</a></span>
+</div>
+
+
+
+<div class="tier card-strong">
+<span class="pill">Lepszy</span><br><br>
+<h3>Pro</h3>
+		<p class="muted">Backup M365 za każdy 1TB</p>
+<div class="price">500 PLN/mc</div>
+<ul class="features">
+<li><span class="check better">✓</span> + SharePoint &amp; Teams</li>
+<li><span class="check better">✓</span> Niezmienne kopie</li>
+<li><span class="check better">✓</span> Własne polityli retencji</li>
+<li><span class="check better">✓</span> Test odtwarzania kwartalny</li>
+</ul>
+<div class="spacer"></div>
+<span class="pill"><a href="#formularz">Wybierz Pro</a></span>
+
+
+
+          
+</div>
+<div class="tier">
+<span class="pill">Najlepszy</span><br><br>
+<h3>Enterprise</h3>
+	<p class="muted">Backup M365 do 24 TB</p>
+<div class="price">5 000 PLN/mc</div>
+<ul class="features">
+<li><span class="check best">✓</span> Wysoka dostępność/HA</li>
+<li><span class="check best">✓</span> Kopia off‑site (druga lokalizacja)</li>
+<li><span class="check best">✓</span> Testy odtwarzania miesięczne</li>
+<li><span class="check best">✓</span> Priorytetowe wsparcie</li>
+</ul>
+<div class="spacer"></div>
+<span class="pill"><a href="#formularz">Wybierz Enterprise</a></span>
+
+
+</div>
+</div>
+</div>
+</section>
+<!-- Formularz -->
+<section id="formularz">
+<div class="container">
+<h2 class="section-title">Formularz wdrożeniowy</h2>
+<p class="section-sub">Wypełnij krótkie zgłoszenie — przygotujemy dopasowaną ofertę i termin wdrożenia.</p>
+<div class="card center" style="flex-direction:column;gap:12px;padding:24px;">
+<!-- TODO: Podmień adres niżej na docelowy link do Microsoft Forms -->
+<iframe allowfullscreen="" frameborder="0" height="680px" marginheight="0" marginwidth="0" mozallowfullscreen="" msallowfullscreen="" src="https://forms.office.com/e/x88tizdtBH?embed=true" style="border: none; max-width:100%; max-height:100vh" webkitallowfullscreen="" width="840px"> </iframe>
+<span class="tag">Potrzebujesz innego kanału? Napisz w uwagach w formularzu.</span>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section id="faq">
+<div class="container">
+<h2 class="section-title">Pytania i odpowiedzi</h2>
+<details>
+<summary>Czy Microsoft robi backup moich danych w M365?</summary>
+<div class="muted">Microsoft zapewnia infrastrukturę i wysoką dostępność, ale ochrona przed utratą danych po stronie użytkownika (np. usunięcia, ransomware) wymaga niezależnej kopii. To model współdzielonej odpowiedzialności.</div>
+</details>
+<details>
+<summary>Jak szybko mogę zacząć?</summary>
+<div class="muted">Najczęściej uruchamiamy pierwszą pełną kopię w ciągu jednego dnia roboczego od uzgodnienia zakresu.</div>
+</details>
+<details>
+<summary>Czy macie dostęp do moich danych?</summary>
+<div class="muted">Stosujemy zasady minimalnych uprawnień i szyfrowanie. Dostęp jest ograniczony do działań administracyjnych zgodnie z umową i logowany.</div>
+</details>
+<details>
+<summary>Jak długo przechowujecie dane?</summary>
+<div class="muted">Określamy polityki retencji zgodne z Twoimi wymaganiami biznesowymi i prawnymi (np. 6, 12, 24+ miesięcy).</div>
+</details>
+<details>
+<summary>Jakie są wymagania sprzętowe?</summary>
+<div class="muted">Wystarczy serwer/NAS z odpowiednią pojemnością i łączem. Dobieramy konfigurację do wielkości danych w tenantcie.</div>
+</details>
+<details>
+<summary>Czy to zgodne z RODO?</summary>
+<div class="muted">Tak — dane pozostają w Polsce, mamy umowy powierzenia i mechanizmy audytowe. Pomagamy przygotować dokumentację.</div>
+</details>
+</div>
+</section>
+</main>
+
+
+<footer>
+
+<div class="container">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+<div style="flex: 1; min-width: 200px;">
+<strong>Valcreon P.S.A.</strong><br/>
+        ul. Żelazna 51/53<br/>
+        00-841 Warszawa<br/>
+        NIP: 123-456-78-90<br/>
+	<a href="https://valcreon.com">www.valcreaon.com</a>
       </div>
-    </section>
+<div style="flex: 1; min-width: 200px;">
+<a href="rodo.html">Polityka prywatności</a>
+</div>
+<div style="flex: 1; min-width: 200px;">
+<span class="tag">© <span id="y"></span> Finerlo. Wszystkie prawa zastrzeżone.</span>
+</div>
+</div>
+</div>
 
-    <!-- Sekcja 1: Powody -->
-    <section id="powody">
-      <div class="container">
-        <h2 class="section-title">Trzy powody, dla których firmy wybierają Finerlo</h2>
-        <p class="section-sub">Proste, konkretne i sprawdzone w realnych wdrożeniach.</p>
-        <div class="grid cols-3">
-          <div class="card reason">
-            <div class="num" aria-hidden="true">1</div>
-            <div>
-              <h3>Backup w 1 dzień</h3>
-              <p class="muted">Szybkie uruchomienie bez przestojów.</p>
-            </div>
-          </div>
-          <div class="card reason">
-            <div class="num" aria-hidden="true">2</div>
-            <div>
-              <h3>Na dyskach - nie w chmurze</h3>
-              <p class="muted">Fizyczne przechowywnai na dyskach w Polsce.</p>
-            </div>
-          </div>
-          <div class="card reason">
-            <div class="num" aria-hidden="true">3</div>
-            <div>
-              <h3>Wszystkie dane w Polsce</h3>
-              <p class="muted">Lokalizacja danych niezależna od Microsoft.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+</footer>
 
-    <!-- Sekcja 2: Dlaczego kopia zapasowa dla Microsoft 365? -->
-    <section id="dlaczego">
-      <div class="container">
-        <h2 class="section-title">Dlaczego kopia zapasowa dla Microsoft 365?</h2>
-        <p class="section-sub">M365 zapewnia wysoką dostępność, ale odpowiedzialność za backup leży po stronie klienta (zasada <em>shared responsibility</em>). Dlatego backup to nie opcja — to konieczność.</p>
-        <div class="grid cols-2">
-          <div class="card">
-            <h3>Typowe ryzyka</h3>
-            <ul>
-              <li>Przypadkowe lub celowe usuwanie danych przez użytkowników.</li>
-              <li>Ataki ransomware / malware rozciągające się na M365.</li>
-              <li>Ograniczone retencje i kosze — po czasie dane znikają.</li>
-              <li>Błędy konfiguracji, migracje, zmiany licencji.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Co daje niezależny backup</h3>
-            <ul>
-              <li>Granularne przywracanie: pojedyncze maile, pliki, witryny.</li>
-              <li>Ochrona przed lock-in: dane dostępne nawet bez M365.</li>
-              <li>Spełnienie wymagań audytowych i RODO.</li>
-              <li>Kontrola kosztów i przewidywalność.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Sekcja 3: Lokalna kopia zapasowa -->
-    <section id="lokalna">
-      <div class="container">
-        <h2 class="section-title">Lokalna kopia zapasowa — prosto i skutecznie</h2>
-        <p class="section-sub">Tworzymy kopię danych Microsoft 365 na Twoim urządzeniu (NAS/serwer) w biurze lub w bezpiecznej serwerowni. Dane są szyfrowane, wersjonowane i gotowe do szybkiego przywrócenia.</p>
-        <div class="grid cols-3">
-          <div class="card">
-            <h3>Na Twoim sprzęcie</h3>
-            <p class="muted">Brak chmury oznacza pełną kontrolę i brak opłat za transfer przy odtwarzaniu.</p>
-          </div>
-          <div class="card">
-            <h3>Szyfrowanie + wersjonowanie</h3>
-            <p class="muted">Chronimy dane przed nieautoryzowanym dostępem i błędami ludzkimi.</p>
-          </div>
-          <div class="card">
-            <h3>Monitoring i testy</h3>
-            <p class="muted">Monitorujemy zadania i cyklicznie testujemy przywracanie, żeby działało wtedy, gdy jest potrzebne.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Sekcja 4: Korzyści -->
-    <section id="korzysci">
-      <div class="container">
-        <h2 class="section-title">Co zyskujesz posiadając kopię zapasową?</h2>
-        <div class="grid cols-3">
-          <div class="card">
-            <h3>Suwerenność danych</h3>
-            <p class="muted">Ty decydujesz, gdzie są dane i kto ma do nich dostęp.</p>
-          </div>
-          <div class="card">
-            <h3>Szybkie odtwarzanie</h3>
-            <p class="muted">Przywracamy pojedyncze elementy lub całe zbiory bez zatrzymywania pracy zespołu.</p>
-          </div>
-          <div class="card">
-            <h3>Przewidywalne koszty</h3>
-            <p class="muted">Bez opłat egress i bez zaskoczeń. Polityki retencji dopasowane do wymagań.</p>
-          </div>
-          <div class="card">
-            <h3>RPO / RTO pod kontrolą</h3>
-            <p class="muted">Harmonogramy dopasowane do Twojego ryzyka i okien serwisowych.</p>
-          </div>
-          <div class="card">
-            <h3>Zgodność i audyty</h3>
-            <p class="muted">Łatwiej spełnić wymagania klientów, kontraktów i RODO.</p>
-          </div>
-          <div class="card">
-            <h3>Elastyczność</h3>
-            <p class="muted">Skalujesz pojemność tak, jak rośnie biznes. Masz dostęp offline do archiwów.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Jak to działa -->
-    <section id="jak">
-      <div class="container">
-        <h2 class="section-title">Jak to działa?</h2>
-        <div class="timeline">
-          <div class="tl-item">
-            <h3>1) Krótka analiza</h3>
-            <p class="muted">Ustalamy zakres (Exchange, OneDrive, SharePoint, Teams), retencje i wymagania bezpieczeństwa.</p>
-          </div>
-          <div class="tl-item">
-            <h3>2) Wdrożenie (do 1 dnia)</h3>
-            <p class="muted">Konfigurujemy połączenie z M365, harmonogramy i pierwsze pełne zadanie backupu.</p>
-          </div>
-          <div class="tl-item">
-            <h3>3) Kopie przyrostowe</h3>
-            <p class="muted">Automatyczne zadania dzienne/godzinowe, raportowanie i alerty.</p>
-          </div>
-          <div class="tl-item">
-            <h3>4) Testy przywracania</h3>
-            <p class="muted">Cykliczne próby odtworzenia, żeby mieć pewność, że wszystko działa.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Jak przywrócić -->
-    <section id="przywracanie">
-      <div class="container">
-        <h2 class="section-title">Jak mogę przywrócić dane z kopii lokalnej?</h2>
-        <div class="grid cols-2">
-          <div class="card">
-            <h3>Przywracanie granularne</h3>
-            <p class="muted">Odtwarzamy pojedyncze wiadomości e-mail, pliki OneDrive/SharePoint, elementy Teams lub całe skrzynki/witryny.</p>
-          </div>
-          <div class="card">
-            <h3>Eksport i self‑service</h3>
-            <p class="muted">Eksport do formatów zgodnych z audytem (np. PST/ZIP) lub dostęp tylko do odczytu dla wybranych osób.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Scenariusze -->
-    <section id="scenariusze">
-      <div class="container">
-        <h2 class="section-title">Scenariusze, w których przywracanie ratuje firmę</h2>
-        <div class="grid cols-3">
-          <div class="card"><h3>Ransomware</h3><p class="muted">Szybki powrót do wersji sprzed ataku bez negocjacji z napastnikami.</p></div>
-          <div class="card"><h3>Odejście pracownika</h3><p class="muted">Zabezpieczenie poczty i plików po dezaktywacji konta.</p></div>
-          <div class="card"><h3>Migracje / błędy</h3><p class="muted">Odtworzenie danych po pomyłkach konfiguracyjnych lub nieudanej migracji.</p></div>
-          <div class="card"><h3>Retencje wygasły</h3><p class="muted">Dane zniknęły z kosza? Przywracamy z kopii.</p></div>
-          <div class="card"><h3>Wymogi prawne</h3><p class="muted">Archiwa na potrzeby e‑discovery i kontroli.</p></div>
-          <div class="card"><h3>Incydenty fizyczne</h3><p class="muted">Awarie lub kradzież laptopów nie zatrzymują pracy — dane są w kopii.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Cennik -->
-    <section id="cennik">
-      <div class="container">
-        <h2 class="section-title">Cennik</h2>
-        <p class="section-sub">Trzy proste warianty. <span class="kbd">Na wycenę</span> — dopasowujemy do wielkości organizacji i zakresu.</p>
-        <div class="pricing">
-          <div class="tier">
-            <span class="pill">Good</span>
-            <h3>Start</h3>
-            <p class="muted">Solidny fundament kopii M365 na Twoim sprzęcie.</p>
-            <div class="price">Na wycenę</div>
-            <ul class="features">
-              <li><span class="check good">✓</span> Backup Exchange & OneDrive</li>
-              <li><span class="check good">✓</span> Dzienne kopie przyrostowe</li>
-              <li><span class="check good">✓</span> Szyfrowanie w spoczynku</li>
-              <li><span class="check good">✓</span> Podstawowe raporty</li>
-            </ul>
-            <div class="spacer"></div>
-            #formularzWybierz Start</a>
-          </div>
-          <div class="tier card-strong">
-            <span class="pill">Better</span>
-            <h3>Pro</h3>
-            <p class="muted">Więcej zakresu i kontroli retencji dla zespołów.</p>
-            <div class="price">Na wycenę</div>
-            <ul class="features">
-              <li><span class="check better">✓</span> + SharePoint & Teams</li>
-              <li><span class="check better">✓</span> Polityki retencji dopasowane</li>
-              <li><span class="check better">✓</span> Zaawansowane raporty i alerty</li>
-              <li><span class="check better">✓</span> Test odtwarzania kwartalny</li>
-            </ul>
-            <div class="spacer"></div>
-            #formularzWybierz Pro</a>
-          </div>
-          <div class="tier">
-            <span class="pill">Best</span>
-            <h3>Enterprise</h3>
-            <p class="muted">Maksymalne bezpieczeństwo i odporność.</p>
-            <div class="price">Na wycenę</div>
-            <ul class="features">
-              <li><span class="check best">✓</span> Wysoka dostępność/HA</li>
-              <li><span class="check best">✓</span> Kopia off‑site (druga lokalizacja)</li>
-              <li><span class="check best">✓</span> Testy odtwarzania miesięczne</li>
-              <li><span class="check best">✓</span> Priorytetowe wsparcie</li>
-            </ul>
-            <div class="spacer"></div>
-            #formularzWybierz Enterprise</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Formularz -->
-    <section id="formularz">
-      <div class="container">
-        <h2 class="section-title">Formularz wdrożeniowy</h2>
-        <p class="section-sub">Wypełnij krótkie zgłoszenie — przygotujemy dopasowaną ofertę i termin wdrożenia.</p>
-        <div class="card center" style="flex-direction:column;gap:12px;padding:24px;">
-          <!-- TODO: Podmień adres niżej na docelowy link do Microsoft Forms -->
-          <iframe width="840px" height="680px" src="https://forms.office.com/e/x88tizdtBH?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
-
-          <span class="tag">Potrzebujesz innego kanału? Napisz w uwagach w formularzu.</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq">
-      <div class="container">
-        <h2 class="section-title">Pytania i odpowiedzi</h2>
-        <details>
-          <summary>Czy Microsoft robi backup moich danych w M365?</summary>
-          <div class="muted">Microsoft zapewnia infrastrukturę i wysoką dostępność, ale ochrona przed utratą danych po stronie użytkownika (np. usunięcia, ransomware) wymaga niezależnej kopii. To model współdzielonej odpowiedzialności.</div>
-        </details>
-        <details>
-          <summary>Jak szybko mogę zacząć?</summary>
-          <div class="muted">Najczęściej uruchamiamy pierwszą pełną kopię w ciągu jednego dnia roboczego od uzgodnienia zakresu.</div>
-        </details>
-        <details>
-          <summary>Czy macie dostęp do moich danych?</summary>
-          <div class="muted">Stosujemy zasady minimalnych uprawnień i szyfrowanie. Dostęp jest ograniczony do działań administracyjnych zgodnie z umową i logowany.</div>
-        </details>
-        <details>
-          <summary>Jak długo przechowujecie dane?</summary>
-          <div class="muted">Określamy polityki retencji zgodne z Twoimi wymaganiami biznesowymi i prawnymi (np. 6, 12, 24+ miesięcy).</div>
-        </details>
-        <details>
-          <summary>Jakie są wymagania sprzętowe?</summary>
-          <div class="muted">Wystarczy serwer/NAS z odpowiednią pojemnością i łączem. Dobieramy konfigurację do wielkości danych w tenantcie.</div>
-        </details>
-        <details>
-          <summary>Czy to zgodne z RODO?</summary>
-          <div class="muted">Tak — dane pozostają w Polsce, mamy umowy powierzenia i mechanizmy audytowe. Pomagamy przygotować dokumentację.</div>
-        </details>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
-        <div style="display:flex;align-items:center;gap:10px">
-			<img src="LOGOBanner480.png" alt="Logo Finerlo.com" class="banner-100"> </div>
-   		<div>
-          <strong>Finerlo</strong>
-        </div>
-        <div>
-          <span class="tag">© <span id="y"></span> Finerlo. Wszystkie prawa zastrzeżone.</span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
+<script>
     function toggleMenu(){
       const panel = document.getElementById('mobilePanel');
       panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
@@ -700,8 +743,7 @@ favicon.ico?
       }
     });
   </script>
-
-	<script>
+<script>
   function toggleMenu() {
     const panel = document.getElementById('mobilePanel');
     panel.classList.toggle('open');
@@ -717,9 +759,8 @@ favicon.ico?
     });
   });
 </script>
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
+<!-- Structured Data -->
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -730,42 +771,4 @@ favicon.ico?
   }
   </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

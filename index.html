@@ -277,6 +277,29 @@ favicon.ico?
     .check.best{background: var(--best)}
     .spacer{height:18px}
 
+	pill3
+
+.pill {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(90deg, var(--primary-2), var(--accent));
+  border: none;
+  backdrop-filter: blur(8px) saturate(160%);
+  -webkit-backdrop-filter: blur(8px) saturate(160%);
+  transition: background 0.3s ease, filter 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pill:hover {
+  background: linear-gradient(90deg, var(--primary-2), var(--accent));
+  filter: brightness(1.15);
+  cursor: pointer;
+}
+
     /* FAQ */
     details{border:1px solid var(--border); border-radius:14px; padding:14px; background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))}
     details+details{margin-top:10px}
@@ -630,7 +653,7 @@ Wdrożenie nawet w jeden <span class="grad"><strong> dzień</strong></span>.</p>
 <li><span class="check better">✓</span> Test odtwarzania kwartalny</li>
 </ul>
 <div class="spacer"></div>
-<span class="pill"><a href="#formularz">Wybierz Pro</a></span>
+<span class="pill3"><a href="#formularz">Wybierz Pro</a></span>
 
 
 
@@ -773,5 +796,6 @@ Wdrożenie nawet w jeden <span class="grad"><strong> dzień</strong></span>.</p>
   </script>
 </body>
 </html>
+
 
 

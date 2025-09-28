@@ -277,7 +277,7 @@ favicon.ico?
     .check.best{background: var(--best)}
     .spacer{height:18px}
 
-	pill3
+	
 
 .pill {
   display: inline-block;
@@ -297,6 +297,46 @@ favicon.ico?
 .pill:hover {
   background: linear-gradient(90deg, var(--primary-2), var(--accent));
   filter: brightness(1.15);
+  cursor: pointer;
+}
+
+	.pill3 {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(90deg, var(--primary-2), var(--accent));
+  border: none;
+  backdrop-filter: blur(8px) saturate(160%);
+  -webkit-backdrop-filter: blur(8px) saturate(160%);
+  transition: background 0.3s ease, filter 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pill3:hover {
+  background: linear-gradient(90deg, var(--primary-2), var(--accent));
+  filter: brightness(1.15);
+  cursor: pointer;
+}
+
+.pill4 {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  background-color: rgba(255, 255, 255, 0.05); /* subtelne tło */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  backdrop-filter: blur(6px) saturate(160%);
+  -webkit-backdrop-filter: blur(6px) saturate(160%);
+}
+
+.pill4:hover {
+  background-color: rgba(255, 255, 255, 0.12); /* lekko jaśniejsze tło */
+  color: var(--text); /* opcjonalnie: ciemniejszy tekst przy hoverze */
   cursor: pointer;
 }
 
@@ -363,7 +403,7 @@ favicon.ico?
 <!-- Language Switcher -->
 
 <div style="width:100%;text-align:center;padding:6px 0;background:#222;color:#fff;font-size:12px;font-family:sans-serif;">
-<span class="pill"><a href="index_en.html"style="color:#fff;text-decoration:none;">English Version</a></span>  <span class="pill"> <a href="index_de.html" style="color:#fff;text-decoration:none;">German Version</a></div></span>
+<span class="pill4"><a href="index_en.html"style="color:#fff;text-decoration:none;">English Version</a></span>  <span class="pill4"> <a href="index_de.html" style="color:#fff;text-decoration:none;">German Version</a></div></span>
 
 
 
@@ -636,7 +676,7 @@ Wdrożenie nawet w jeden <span class="grad"><strong> dzień</strong></span>.</p>
 <li><span class="check good">✓</span> Polityki retencji 30 dni</li>
 </ul>
 <div class="spacer"></div>
-<span class="pill"><a href="#formularz">Wybierz Basic</a></span>
+<span class="pill4"><a href="#formularz">Wybierz Basic</a></span>
 </div>
 
 
@@ -671,7 +711,7 @@ Wdrożenie nawet w jeden <span class="grad"><strong> dzień</strong></span>.</p>
 <li><span class="check best">✓</span> Priorytetowe wsparcie</li>
 </ul>
 <div class="spacer"></div>
-<span class="pill"><a href="#formularz">Wybierz Enterprise</a></span>
+<span class="pill4"><a href="#formularz">Wybierz Enterprise</a></span>
 
 
 </div>
@@ -732,7 +772,7 @@ Wdrożenie nawet w jeden <span class="grad"><strong> dzień</strong></span>.</p>
         ul. Żelazna 51/53<br/>
         00-841 Warszawa<br/>
         NIP: 123-456-78-90<br/>
-	<a href="https://valcreon.com">www.valcreaon.com</a>
+	<a href="https://valcreon.com">www.valcreon.com</a>
       </div>
 <div style="flex: 1; min-width: 200px;">
 <a href="rodo.html">Polityka prywatności</a>
@@ -796,6 +836,7 @@ Wdrożenie nawet w jeden <span class="grad"><strong> dzień</strong></span>.</p>
   </script>
 </body>
 </html>
+
 
 
 

@@ -260,10 +260,21 @@ favicon.ico?
     .features{list-style:none; padding:0; margin:12px 0 0}
     .features li{display:flex; gap:10px; align-items:flex-start; margin:8px 0}
     .check{width:18px; height:18px; border-radius:4px; display:grid; place-items:center; color:#07180f}
+	
     .check.good {background: var(--good);display: inline-block;padding: 2px 6px;border-radius: 4px;vertical-align: middle;transform: translateY(20%)}
-	.check.good::before {content: "✓";display: inline-block; transform: translate(-5px, -5px); /* podnosi tylko ikonę */}
-    .check.better{background: var(--better);transform: translateY(20%);padding-bottom: 25px;}
-    .check.best{background: var(--best);transform: translateY(20%);padding-bottom: 25px;}
+	.check.good::before {content: "✓";display: inline-block; transform: translate(-3px, -5px); /* podnosi tylko ikonę */}
+
+    .check.no-good {background: var(--no-good);display: inline-block;padding: 2px 6px;border-radius: 4px;vertical-align: middle;transform: translateY(20%)}
+	.check.no-good::before {content: "X";display: inline-block; transform: translate(-3px, -5px); /* podnosi tylko ikonę */}
+	
+    .check.better {background: var(--better);display: inline-block;padding: 2px 6px;border-radius: 4px;vertical-align: middle;transform: translateY(20%)}
+	.check.better::before {content: "✓";display: inline-block; transform: translate(-3px, -5px); /* podnosi tylko ikonę */}
+
+	.check.best {background: var(--best);display: inline-block;padding: 2px 6px;border-radius: 4px;vertical-align: middle;transform: translateY(20%)}
+	.check.best::before {content: "✓";display: inline-block; transform: translate(-3px, -5px); /* podnosi tylko ikonę */}
+	
+    /*.check.better{background: var(--better);transform: translateY(20%);padding-bottom: 25px;}
+    .check.best{background: var(--best);transform: translateY(20%);padding-bottom: 25px;}*/
     .spacer{height:18px}
 
 	
@@ -645,8 +656,8 @@ Wdrożenie nawet w jeden <span class="grad"><strong> dzień</strong></span>.</p>
 <ul class="features">
 <li><span class="check good"></span> Backup Exchange &amp; OneDrive</li>
 <li><span class="check good"></span> Dzienne kopie przyrostowe</li>
-<li><span class="check good">X</span> Brak niezmienności</li>
-<li><span class="check good">X</span> Polityki retencji 30 dni</li>
+<li><span class="check no-good"></span> Brak niezmienności</li>
+<li><span class="check no-good"></span> Polityki retencji 30 dni</li>
 </ul>
 <div class="spacer"></div>
 <span class="pill4"><a href="#formularz">Wybierz Basic</a></span>
@@ -660,10 +671,10 @@ Wdrożenie nawet w jeden <span class="grad"><strong> dzień</strong></span>.</p>
 		<p class="muted">Backup M365 za każdy 1 TB</p>
 <div class="price">500 PLN/mc</div>
 <ul class="features">
-<li><span class="check better">✓</span> + SharePoint &amp; Teams</li>
-<li><span class="check better">✓</span> Niezmienne kopie</li>
-<li><span class="check better">✓</span> Własne polityli retencji</li>
-<li><span class="check better">✓</span> Test odtwarzania półroczny</li>
+<li><span class="check better"></span> + SharePoint &amp; Teams</li>
+<li><span class="check better"></span> Niezmienne kopie</li>
+<li><span class="check better"></span> Własne polityli retencji</li>
+<li><span class="check better"></span> Test odtwarzania półroczny</li>
 </ul>
 <div class="spacer"></div>
 <span class="pill3"><a href="#formularz">Wybierz Pro</a></span>
@@ -678,10 +689,10 @@ Wdrożenie nawet w jeden <span class="grad"><strong> dzień</strong></span>.</p>
 		<p class="muted">Kopia backupu za każdy 1 TB</p>
 <div class="price">250 PLN/mc</div>
 <ul class="features">
-<li><span class="check better">✓</span> Kopia do chmury</li>
-<li><span class="check better">✓</span> Przechowywanie w Europie</li>
-<li><span class="check better">✓</span> Niezależne od korporacji USA</li>
-<li><span class="check better">✓</span> Klucz odzyskiwania</li>
+<li><span class="check better"></span> Kopia do chmury</li>
+<li><span class="check better"></span> Przechowywanie w Europie</li>
+<li><span class="check better"></span> Niezależne od korporacji USA</li>
+<li><span class="check better"></span> Klucz odzyskiwania</li>
 </ul>
 <div class="spacer"></div>
 <span class="pill3"><a href="#formularz">Wybierz Pro+</a></span>
@@ -694,10 +705,10 @@ Wdrożenie nawet w jeden <span class="grad"><strong> dzień</strong></span>.</p>
 	<p class="muted">Backup M365 do 20 TB</p>
 <div class="price">5 000 PLN/mc</div>
 <ul class="features">
-<li><span class="check good">✓</span> Wysoka dostępność/HA</li>
-<li><span class="check good">✓</span> Kopia off‑site (druga lokalizacja)</li>
-<li><span class="check good">✓</span> Testy odtwarzania miesięczne</li>
-<li><span class="check good">✓</span> Priorytetowe wsparcie</li>
+<li><span class="check good"></span> Wysoka dostępność/HA</li>
+<li><span class="check good"></span> Kopia off‑site (druga lokalizacja)</li>
+<li><span class="check good"></span> Testy odtwarzania miesięczne</li>
+<li><span class="check good"></span> Priorytetowe wsparcie</li>
 </ul>
 <div class="spacer"></div>
 <span class="pill4"><a href="#formularz">Wybierz Enterprise</a></span>
@@ -837,6 +848,7 @@ Wdrożenie nawet w jeden <span class="grad"><strong> dzień</strong></span>.</p>
 	
 </body>
 </html>
+
 
 
 

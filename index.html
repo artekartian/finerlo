@@ -198,6 +198,7 @@ favicon.ico?
       display:block; padding:14px 20px;
       border-top:1px solid var(--border);
       color: var(--muted);
+	  text-align: center; /* wyśrodkowanie tekstu */
     }
     .mobile-panel a:hover{color: var(--text)}
 
@@ -407,20 +408,25 @@ favicon.ico?
 <li><a href="#faq">FAQ</a></li>
 <li><a href="#formularz">Formularz</a></li>
 </ul></nav>
+
 <!-- NAV mobile -->
 <button aria-label="Otwórz menu" class="menu-toggle" onclick="toggleMenu()"></button>
 <div aria-label="Menu mobilne" class="mobile-panel" id="mobilePanel">
-<li><a href="#powody">Finerlo dla firm</a></li>
-<li><a href="#dlaczego">Dlaczego M365</a></li>
-<li><a href="#lokalna">Lokalna kopia</a></li>
-<li><a href="#jak">Jak to działa</a></li>
-<li><a href="#cennik">Cennik</a></li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#formularz">Formularz</a></li>
+<a href="#powody">Finerlo dla firm</a>
+<a href="#dlaczego">Dlaczego M365</a>
+<a href="#lokalna">Lokalna kopia</a>
+<a href="#jak">Jak to działa</a>
+<a href="#cennik">Cennik</a>
+<a href="#faq">FAQ</a>
+<a href="#formularz">Formularz</a>
 </div>
 </div></header>
+
+	
 <!-- MAIN -->
 <main>
+
+
 <!-- Hero / Claim -->
 <section id="hero">
 <div class="container">
@@ -830,8 +836,21 @@ Wdrożenie nawet w jeden <span class="grad"><strong> dzień</strong></span>.</p>
     "sameAs": []
   }
   </script>
+
+
+<script>
+  window.addEventListener('resize', function () {
+    const panel = document.querySelector('.mobile-panel');
+    if (window.innerWidth > 880 && panel.classList.contains('open')) {
+      panel.classList.remove('open');
+    }
+  });
+</script
+
+	
 </body>
 </html>
+
 
 
 
